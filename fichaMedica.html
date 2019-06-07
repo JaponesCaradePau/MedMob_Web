@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedMob</title>
+        <link rel="stylesheet" href="css/styleMenu.css">  
+        <link rel="icon" type="imagem" href="image/favicon.ico" />
+</head>
+   <div class="header">
+      <div class="h-wraper">
+          
+           <div class="logo">
+               <img src="image/logo2.png" alt="Logo">
+           </div>    
+       </div>   
+    </div>
+   
+    <div class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="hospitaisFavoritos.html">Hospitais Favoritos</a></li>
+          <li><a href="medicamento.html">Medicamentos</a></li>
+          <li><a class="active" href="#fichaMedica">Ficha Médica</a></li>
+          <li><a href="configuracoes.html">Configurações</a></li>
+        </ul>
+    </div>
+    <div class="formularioFichaMedica">
+        <div style="margin-left:10%;padding:1px 16px;height:1000px;">
+            <div class="titulo">
+              <label for="fichaMedica">Ficha médica</label>
+            </div>
+            <br>
+             <form>
+                <label for="tipoSangue">Tipo sangíneo:</label>
+                <select id="tipoSangue" name="tipoSangue">
+                  <option value="AP">A+</option>
+                  <option value="AN">A-</option>
+                  <option value="BP">B+</option>
+                  <option value="BN">B-</option>
+                  <option value="OP">O+</option>
+                  <option value="ON">O-</option>
+                  <option value="ABP">AB+</option>
+                  <option value="ABN">AB-</option>
+                </select>
+                 <br><br>
+                <label for="pressao">Pressão:</label>
+                <select id="pressao" name="pressao">
+                  <option value="baixa">Baixa</option>
+                  <option value="alta">Alta</option>
+                  <option value="normal">Normal</option>
+                </select>
+                 <br><br>
+                 <label for="diabete">Diabete:</label><br>
+                 <input type="radio" name="opcao" value="nao"> Não
+                 <input type="radio" name="opcao" value="sim"> Sim
+                 <br><br>
+                 <label for="uniMedida">Alergia:</label>
+                <input type="text" id="alergia" name="alergia" placeholder="Ex: picada de inseto..">
+                 <br><br>
+                 <label for="observacao">Observação médica:</label>
+                 <input type="text" id="observacao" name="informacoes">
+                 <br>  
+                 <input type="submit" value="Salvar">
+              </form>
+        </div>
+ </div>
+</html>

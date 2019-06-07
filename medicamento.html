@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedMob</title>
+        <link rel="stylesheet" href="css/styleMenu.css">  
+        <link rel="icon" type="imagem" href="image/favicon.ico" />
+</head>
+   <div class="header">
+      <div class="h-wraper">
+          
+           <div class="logo">
+               <img src="image/logo2.png" alt="Logo">
+               
+           </div> 
+          <a href="index.html" style="text-align: right" color="white">Sair</a>
+       </div>   
+    </div>
+   
+    <div class="menu">
+        <ul>
+          <li><a href="inicial.html">Inicio</a></li>
+          <li><a href="hospitaisFavoritos.html">Hospitais Favoritos</a></li>
+          <li><a class="active" href="#medicamento">Medicamentos</a></li>
+          <li><a href="fichaMedica.html">Ficha Médica</a></li>
+          <li><a href="configuracoes.html">Configurações</a></li>
+        </ul>
+    </div>
+    <div class="formulario">
+        <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+            <div class="titulo">
+              <label for="informacoes">Adicionar Médicamento</label>
+            </div>
+            <br>
+             <form>
+                <label for="Mnome">Nome do medicamento:</label>
+                <input type="text" id="fname" name="nomeMedicmaneto">
+                 <br>
+                <label for="qtdMedicamento">Quantidade de medicamento</label>
+                <select id="qtdMedicamento" name="qtdMedicamento">
+                  <option value="um">1</option>
+                  <option value="dois">2</option>
+                  <option value="tres">3</option>
+                  <option value="quatro">4</option>
+                </select>
+                 <br>
+                 <label for="uniMedida">Unidade de medida:</label>
+                <input type="text" id="uniMedida" name="uniMedida" placeholder="Ex: comprimido..">
+                 <br>
+                 <label for="informacoes">Infomações adicionais:</label>
+                 <input type="text" id="informacoes" name="informacoes">
+                 <br>
+                <input type="submit" value="Salvar">
+              </form>
+        </div>
+
+ </div>
+    
+    <div class="listaMedicamento">
+        <div style="margin-left:300%;padding:1px 16px ;height:1000px;">
+            <div class="titulo2">
+              <p>Lista de medicamentos</p>
+            </div>
+                </div>
+        </div>
+</html>
