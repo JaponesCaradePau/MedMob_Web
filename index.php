@@ -12,20 +12,20 @@
                <img src="image/logo.JPG" alt="Logo">
            </div>
            <div class="signin">
-              <form style="color: white;">
+              <form method = "post" action = "login.php" style="color: white;">
                 <ul>
                     <li>
                         E-mail<br>
                      <input type="text" name="email" id ="email">
                     </li>
                     <li>
-                        Senha<br>
-                      <input type="password" name="password" id="senha">
+                        password<br>
+                      <input type="password" name="password" id="password">
                     </li>
                     <li>
-                        <br><input type="submit" value="Log In" >
+                        <br><input type="submit" value="Log In">
                     </li>
-                </ul>     
+                </ul>    
                </form>
            </div>
        </div>
@@ -38,7 +38,7 @@
         <div class="signup">
             <h2 style="font-size: px;12">Começe criando a sua conta</h2>
             <br>
-            <form method="post" action="login.php" id="formlogin" name="formlogin">
+            <form method="post" action="create.php" id="formlogin" name="formlogin">
                 <ul>
                     <li>
                         <input type="text" name="First Name" size="15" placeholder="Primeiro nome">
@@ -50,7 +50,7 @@
                         <input type="text" name="Mobile number or email address" size="36" placeholder="e-mail">
                     </li>
                     <li>
-                        <input type="password" name="New password" size="36" placeholder="Nova Senha">
+                        <input type="password" name="New password" size="36" placeholder="Nova password">
                     </li>
                 </ul>
             </form>
@@ -72,35 +72,6 @@
             <br>
 			<input type="submit" value="Criar">
         </div>
-		
-		<?php 
-// session_start inicia a sessão
-session_start();
-// as variáveis login e senha recebem os dados digitados na página anterior
-$login = $_POST['login'];
-$senha = $_POST['senha'];
-// as próximas 3 linhas são responsáveis em se conectar com o bando de dados.
-$con = mysql_connect("127.0.0.1", "root","qJZrqvaruapMjy57") or die
- ("Sem conexão com o servidor");
-$select = mysql_select_db("server") or die("Sem acesso ao DB");
- 
-
-$result = mysql_query("SELECT * FROM `CADASTRO` 
-WHERE `NOME` = '$login' AND `SENHA`= '$senha'");
-
-if(mysql_num_rows ($result) > 0 )
-{
-$_SESSION['login'] = $login;
-$_SESSION['senha'] = $senha;
-header('location:medicamento.html');
-}
-else{
-  unset ($_SESSION['login']);
-  unset ($_SESSION['senha']);
-  header('location:index.html');
-   
-  }
-?>
         
     </div>
     <div class="footer">
