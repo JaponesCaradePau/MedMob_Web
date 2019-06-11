@@ -1,33 +1,34 @@
 <?php 
- session_start();
-	$email = strip_tags($_POST['nome']);
-	$password = strip_tags($_POST['password']);
-	echo $password."<br>";
-    $password = sha1(strip_tags($_POST['password']));
-	echo $password."<br>";
-    // conctando ao BD
-    include "conecta_mysql.php";
+  $email = $_POST[‘email’];
 
-	$query="SELECT * from cadastro WHERE  email=? AND password=?";
 
-	if($stmt = mysqli_prepare($conexao, $query)) {
-		mysqli_stmt_bind_param($stmt, "ss", $email, $password);	
-		mysqli_stmt_execute($stmt);
-		mysqli_stmt_bind_result($stmt, $id, $nome, $email, $password, $foto);
-		mysqli_stmt_fetch($stmt);
-	  
-		if ($email == $nome && $password == $password) {
-			$_SESSION['email'] = $email;
-			$_SESSION['password'] = $password;
-			header('location:medicamento.html');
-		}	  
-		else {
-			echo "email ou senha incorretos";
-		}
-		$stmt -> close();
-	} else {
-		echo "Falha no statment";
-	}
-	$conexao -> close();
-}
+  $password = md5($_POST[‘password’]);
+
+  $connect = mysqli_connect('localhost:3306','root','');
+
+  $db = mysqli_select_db('cadastro');
+
+    if (isset($email)) {
+
+             
+
+      $verifica = mysqli_query("SELECT * FROM cadastro WHERE email = ‘$email’ AND password = '$password'") or die("erro ao selecionar");
+
+        if (mysqli_num_rows($verifica)<=0){
+
+          echo"<script language=’javascript’ type=’text/javascript’>alert(‘email e/ou password incorretos’);window.location.href=’email.html’;</script>";
+
+          die();
+
+        }else{
+
+          setcookie(“email”,$email);
+
+          header("Location:configuracoes.php");
+
+        }
+
+    }
+
+?>
 ?>
